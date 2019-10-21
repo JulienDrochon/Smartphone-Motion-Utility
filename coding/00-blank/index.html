@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <script src="js/socket.io.slim.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="valeursVariable01"></div>
+    <div id="valeursVariable02"></div>
+    <div id="valeursVariable03"></div>
+  </body>
+  <script src="js/script.js"></script>
+  <script>
+    setInterval(function() {
+      document.getElementById(
+        'valeursVariable01'
+      ).innerHTML = variableOrientation01;
+      document.getElementById(
+        'valeursVariable02'
+      ).innerHTML = variableOrientation02;
+      document.getElementById(
+        'valeursVariable03'
+      ).innerHTML = variableOrientation03;
+    }, 50);
+  </script>
+</html>
