@@ -14,9 +14,14 @@
     <div id="valeursVariable02"></div>
     <div id="valeursVariable03"></div>
   </body>
-  <script src="js/script.js"></script>
+  <!-- <script src="js/script.js"></script> -->
+  <script src="js/library.js"></script>
   <script>
     setInterval(function() {
+      // function pour actualiser les valeurs des variables
+
+      // --- dans la page web --- //
+      // afficher dans la page dans les div id valeursVariable01, valeursVariable02, valeursVariable03 les valeurs des variables
       document.getElementById(
         'valeursVariable01'
       ).innerHTML = variableOrientation01;
@@ -26,6 +31,12 @@
       document.getElementById(
         'valeursVariable03'
       ).innerHTML = variableOrientation03;
-    }, 50);
+
+      // --- dans la console --- //
+      // afficher dans la console du navigateur les valeurs des variables
+      console.log('variable 1 : ' + variableOrientation01);
+      console.log('variable 2 : ' + variableOrientation02);
+      console.log('variable 3 : ' + variableOrientation03);
+    }, 50); // toutes les 50 millisecondes, on rafraichit les valeurs des variables
   </script>
 </html>

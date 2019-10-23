@@ -4,27 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
+  
     <script src="js/socket.io.slim.js"></script>
+    
     <link rel="stylesheet" href="css/style.css" />
 
-    <title>Document</title>
+    <title>Variable Font</title>
   </head>
   <body>
-    <div id="valeursVariable01"></div>
-    <div id="valeursVariable02"></div>
-    <div id="valeursVariable03"></div>
     <did id='variableFont'>Hello World</div>
   </body>
-  <script src="js/script.js"></script>
-  <script>
-    setInterval(function() {
-  
-       document.getElementById('variableFont').style.fontVariationSettings = "'wght' " + parseInt(map_range(variableOrientation01, 0, 359, 10, 160));
+<script src="js/library.js"></script>
 
-    }, 50);
-   function map_range(value, low1, high1, low2, high2) {
-      return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
-    }
+  <script>
+   setInterval(function () {
+    document.getElementById('variableFont').style.fontVariationSettings =
+      "'wght' " + parseInt(map_range(variableOrientation01, 0, 359, 10, 160));
+  }, 50);
   </script>
 </html>
