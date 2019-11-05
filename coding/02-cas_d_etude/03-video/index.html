@@ -9,27 +9,50 @@
     <script src="js/socket.io.slim.js"></script>
   </head>
   <body>
-    <video src="assets/mark-lewis-algonquin-park.mp4" controls></video>
+    <video
+      id="maVideo"
+      src="assets/mark-lewis-algonquin-park.mp4"
+      preload="auto"
+      controls
+    ></video>
     <script src="js/library.js"></script>
     <script>
-      var oldVariableOrientation01, newVariableOrientation01, delta;
+      var videoDiv = document.getElementById('maVideo');
 
       setInterval(function() {
-        // delta = oldVariableOrientation01 - newVariableOrientation01;
         // --- dans la console --- //
         // afficher dans la console du navigateur les valeurs des variables
-        console.log('variable 1 : ' + variableOrientation01);
-        // console.log('variable 2 : ' + variableOrientation02);
-        // console.log('variable 3 : ' + variableOrientation03);
-        newVariableOrientation01 = variableOrientation01; // je stocke la valeur de la variable dans une autre variable avant de l'utiliser
-        delta = oldVariableOrientation01 - newVariableOrientation01; // je fais la difference de la valeur de la variable avant et après utilisation. cela permet de déduire le sens de rotation
-        if (delta > 0) {
-          window.scrollBy(0, -2);
-        } else if (delta < 0) {
-          window.scrollBy(0, 2);
+        console.log('variable 2 : ' + variableOrientation02);
+
+        if (variableOrientation02 > 0) {
+          if (videoDiv.paused) {
+            videoDiv.currentTime = videoDiv.play();
+          }
+        } else if (variableOrientation02 == 0) {
+          videoDiv.pause();
+        } else if (variableOrientation02 < 0) {
+          videoDiv.pause();
+          videoDiv.currentTime = videoDiv.currentTime - 0.5;
+          // videoDiv.playBackwards(); // je joue ma vidéo à l'envers
         }
-        oldVariableOrientation01 = variableOrientation01; // je stocke la valeur de la variable dans une autre variable après l'avoir utilisée
       }, 20); // toutes les 50 millisecondes, on rafraichit les valeurs des variables
+
+      // fonction pour lire la video à l'envers
+      HTMLVideoElement.prototype.playBackwards = function() {
+        this.pause();
+
+        var video = this;
+
+        var fps = 25;
+        var intervalRewind = setInterval(function() {
+          if (video.currentTime == 0) {
+            clearInterval(intervalRewind);
+            video.pause();
+          } else {
+            video.currentTime += -(1 / fps);
+          }
+        }, 500 / fps);
+      };
     </script>
   </body>
 </html>
