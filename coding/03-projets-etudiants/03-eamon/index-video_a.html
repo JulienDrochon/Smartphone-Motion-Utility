@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <script src="js/socket.io.slim.js"></script>
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="lib/socket.io.slim.js"></script>
+</head>
+
+<body>
+  <video id="idDeMaVideo" src="a_video_bd.mp4">
+  </video>
+</body>
+<script src="lib/library.js"></script>
+<script>
+  //je déclare ma variable et lui assigne l'élément avec l'id 'idDeMaVideo'
+  var videoDiv = document.getElementById("idDeMaVideo");
+
+  setInterval(function () {
+    // si la valeur de variableOrientation01 est plus grande que 180…
+    if (variableOrientation01 > 180) {
+      //je vérifie si la video est en pause
+      if (videoDiv.paused) {
+        // Si oui, je lance la lecture
+        videoDiv.play()
+      } else {
+        //si non, je ne fais rien
+      }
+    }
+    // si la valeur de variableOrientation01 est plus petite que 180…
+    if (variableOrientation01 < 180) {
+      //je vérifie si la video est en pause
+      if (videoDiv.paused) {
+        // Si oui, je ne fais rien
+
+      } else {
+        //si non, la mets en pause
+        videoDiv.pause()
+      }
+    }
+    // --- dans la console --- //
+    // afficher dans la console du navigateur les valeurs des variables
+    console.log('variable 1 : ' + variableOrientation01);
+  }, 50); // toutes les 50 millisecondes, on rafraichit les valeurs des variables
+
+
+</script>
+
+</html>
