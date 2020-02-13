@@ -1,7 +1,3 @@
-//https://dev.to/li/how-to-requestpermission-for-devicemotion-and-deviceorientation-events-in-ios-13-46g2
-//https://developer.mozilla.org/fr/docs/Web/API/DeviceMotionEvent.acceleration
-//https://developer.apple.com/documentation/safari_release_notes/safari_12_1_release_notes
-// Shake : https://gist.github.com/minwe/9887001
 // tested on ios 10.13 Chrome /+ Safari
 
 var button = document.createElement("button");
@@ -17,8 +13,6 @@ var x1 = 0,
   x2 = 0,
   y2 = 0,
   z2 = 0;
-
-// var sensitivity = 10;
 
 // 2. Append somewhere
 var body = document.getElementsByTagName("body")[0];
@@ -86,17 +80,4 @@ function onClickIos() {
   } else {
     // handle regular non iOS 13+ devices
   }
-
-  // --------------- Device Accelerometre
-  // if (typeof DeviceMotionEvent.requestPermission === "function") {
-  //   DeviceMotionEvent.requestPermission()
-  //     .then(permissionState => {
-  //       if (permissionState === "granted") {
-  //         window.addEventListener("devicemotion", () => {});
-  //       }
-  //     })
-  //     .catch(console.error);
-  // } else {
-  //   // handle regular non iOS 13+ devices
-  // }
 }
