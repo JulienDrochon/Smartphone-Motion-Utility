@@ -26,8 +26,6 @@ class Sprite {
   init() {
     // création d'une variable nommé img spécifique à la class (this.)
     this.img;
-    this.imgX;
-    this.imgY;
     // on indique que la variable img est un élément html de type <img >
     this.img = document.createElement("IMG");
     // on indique une source d'image à la variable img
