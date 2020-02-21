@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="ImageFondEcran">
+      <!-- Masque noir et cercle transparent en plein ecran -->
+      <svg x="0px" y="0px" class="maskFullscreen">
+        <!-- L'element mask est celui qui permet de faire un masque (une sorte de trou) dans l'élement vectoriel svg -->
+        <mask id="trou">
+          <!-- Rectangle noir -->
+          <rect height="100%" x="0" y="0" fill="white" />
+          <g transform="translate(0, 0)">
+            <!-- Cercle transparent : cx = position x, cy = position y r = rayon -->
+            <circle cx="30" cy="100" r="100" />
+          </g>
+        </mask>
+        <!-- rectangle noir qui est troué par l'élément mask qui à l'id "trou" -->
+        <rect x="0" y="0" class="maskFullscreen" mask="url(#trou)" />
+      </svg>
+    </div>
+    <script src="js/script.js"></script>
+    <script>
+      var monSprite = new Sprite();
+      monSprite.init();
+      monSprite.move();
+    </script>
+  </body>
+</html>
