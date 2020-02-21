@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/JulienDrochon/2019-2020_smartphone_as-object/master/coding/03-projets-etudiants/02-thomas/apercu.gif">
+
 Nous utiliserons le navigateur Google Chrome pour afficher ces exemples.
 
 # Méthode
