@@ -14,7 +14,7 @@ Nous allons d'abord réaliser l'affichage d'une image fixe, recouverte par une i
 
 Masque SVG : explication en ligne : https://developer.mozilla.org/fr/docs/Web/SVG/Element/mask
 
-&rarr; Code étape 1
+&rarr; Code étape 1 : https://github.com/JulienDrochon/2019-2020_smartphone_as-object/tree/master/coding/03-projets-etudiants/02-thomas/01-etape1
 
 #### Lignes de code à regarder
 
@@ -32,7 +32,7 @@ JS : --
 
 eventListener (mousemove) : https://www.youtube.com/watch?v=ierLz3rZ0Vk
 
-&rarr; Code étape 2
+&rarr; Code étape 2 : https://github.com/JulienDrochon/2019-2020_smartphone_as-object/tree/master/coding/03-projets-etudiants/02-thomas/02-etape2
 
 #### Lignes de code à regarder
 
@@ -54,7 +54,7 @@ comment les utiliser : https://www.youtube.com/watch?v=ierLz3rZ0Vk
 
 générer une valeur aléatoire : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random
 
-&rarr; Code étape 3
+&rarr; Code étape 3 : https://github.com/JulienDrochon/2019-2020_smartphone_as-object/tree/master/coding/03-projets-etudiants/02-thomas/03-etape3
 
 #### Lignes de code à regarder
 
@@ -70,7 +70,7 @@ En partant de l'étape précédente nous allons faire déplacer le sprite vertic
 
 #### Notions de codage
 
---
+-- en cours
 
 #### Lignes de code à regarder
 
