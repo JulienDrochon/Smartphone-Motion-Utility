@@ -17,16 +17,20 @@
   <script src="js/library.js"></script>
   <script>
     //je déclare ma variable et lui assigne l'élément avec l'id 'montitre'
-    var variableDivMontitre = document.getElementById('montitre');
+    var variableDivMontitre = document.getElementById("montitre");
 
-    setInterval(function() {
+    setInterval(function () {
       // --- dans la console --- //
       // afficher dans la console du navigateur les valeurs des variables
-      console.log('variable 1 : ' + variableOrientation01);
+      console.log("variable 1 : " + variableOrientation01);
 
       // je change la propriété de la composante rouge de la couleur de ma police
+      //la fonction map_range() permet de transformer une plage de valeur (0,359) en une autre (0,255)
+      //Par exemple, quand ma valeur d'entrée est égale à 359, la fonction map_range la transforme en 255.
+      //Par exemple,quand ma valeur d'entrée est égale à 179.5, la fonction map_range la transforme en 127.5.
+      //et ceci pour toutes le valeurs comprises entre 0 et 359 dans ce cas
       variableDivMontitre.style.color =
-        'rgb(' + map_range(variableOrientation01, 0, 359, 0, 255) + ',0,0)';
+        "rgb(" + map_range(variableOrientation01, 0, 359, 0, 255) + ",0,0)";
     }, 50); // toutes les 50 millisecondes, on rafraichit les valeurs des variables
   </script>
 </html>
