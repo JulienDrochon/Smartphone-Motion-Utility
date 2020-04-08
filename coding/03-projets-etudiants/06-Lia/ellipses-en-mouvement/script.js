@@ -1,4 +1,4 @@
-//var variableduTelephone = (une variable qui varie entre 0.5 et 10) -> voir le code
+//var variableduTelephone = (une variable qui varie entre 0.5 et 10) -> voir le code https://github.com/JulienDrochon/2019-2020_smartphone_as-object/blob/master/coding/00-Etape-par-etape/05_js-variable-1-couleur-police-rouge-fonction-map-range/index.html
 var variableduTelephone;
 
 setInterval(function () {
