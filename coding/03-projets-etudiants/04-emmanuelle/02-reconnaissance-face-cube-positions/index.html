@@ -4,85 +4,93 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
+    <!-- Bibliothèque nécessaire pour récupérer les valeurs des données du téléphone -->
     <script src="js/socket.io.slim.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
   </head>
   <body>
-    <div id="valeursVariable01"></div>
-    <div id="valeursVariable02"></div>
-    <div id="valeursVariable03"></div>
-    <div id="">Shake : <span id="valeursVariable04">--</span></div>
+    <!-- div pour afficher la valeur de la variable variableOrientation07 -->
+    <div id="valeursVariable07"></div>
+    <!-- div pour afficher la valeur de la variable variableOrientation08 -->
+    <div id="valeursVariable08"></div>
+    <!-- div pour afficher la valeur de la variable variableOrientation09 -->
+    <div id="valeursVariable09"></div>
+    <!-- div pour afficher la valeur de la variable variableOrientation10, c'est à dire l'évenement Shake -->
+    <div>Shake : <span id="valeursVariable10">--</span></div>
+    <!-- div pour afficher la valeur de la face du cube située au sommet -->
     <div id="face"></div>
+
+    <!-- Bibliothèque nécessaire pour récupérer les valeurs des données du téléphone -->
+
+    <script src="js/library.js"></script>
+    <script>
+      setInterval(function () {
+        // function pour actualiser les valeurs des variables
+
+        // --- dans la page web --- //
+        // afficher dans la page dans les div id valeursVariable01, valeursVariable02, valeursVariable03 les valeurs des variables
+        document.getElementById(
+          "valeursVariable07"
+        ).innerHTML = variableOrientation07;
+        document.getElementById(
+          "valeursVariable08"
+        ).innerHTML = variableOrientation08;
+        document.getElementById(
+          "valeursVariable09"
+        ).innerHTML = variableOrientation09;
+        document.getElementById(
+          "valeursVariable10"
+        ).innerHTML = variableOrientation10;
+
+        // Détermination de la valeur des variables correspondant aux différentes faces du cube situées au sommet
+        if (
+          variableOrientation07 == 0 &&
+          variableOrientation08 == 0 &&
+          variableOrientation09 > 8
+        ) {
+          document.getElementById("face").innerHTML = "A";
+        }
+
+        if (
+          variableOrientation07 == 0 &&
+          variableOrientation08 < -8 &&
+          variableOrientation09 == 0
+        ) {
+          document.getElementById("face").innerHTML = "B";
+        }
+
+        if (
+          variableOrientation07 > 8 &&
+          variableOrientation08 <= 1 &&
+          variableOrientation09 <= 1
+        ) {
+          document.getElementById("face").innerHTML = "F";
+        }
+
+        if (
+          variableOrientation07 <= 1 &&
+          variableOrientation08 <= 1 &&
+          variableOrientation09 < -8
+        ) {
+          document.getElementById("face").innerHTML = "C";
+        }
+
+        if (
+          variableOrientation07 <= 1 &&
+          variableOrientation08 > 8 &&
+          variableOrientation09 <= 1
+        ) {
+          document.getElementById("face").innerHTML = "D";
+        }
+        if (
+          variableOrientation07 < -8 &&
+          variableOrientation08 <= 1 &&
+          variableOrientation09 <= 1
+        ) {
+          document.getElementById("face").innerHTML = "E";
+        }
+      }, 50); // toutes les 50 millisecondes, on rafraichit les valeurs des variables
+    </script>
   </body>
-  <!-- <script src="js/script.js"></script> -->
-  <script src="js/library.js"></script>
-  <script>
-    setInterval(function () {
-      // function pour actualiser les valeurs des variables
-
-      // --- dans la page web --- //
-      // afficher dans la page dans les div id valeursVariable01, valeursVariable02, valeursVariable03 les valeurs des variables
-      document.getElementById(
-        "valeursVariable01"
-      ).innerHTML = variableOrientation07;
-      document.getElementById(
-        "valeursVariable02"
-      ).innerHTML = variableOrientation08;
-      document.getElementById(
-        "valeursVariable03"
-      ).innerHTML = variableOrientation09;
-      document.getElementById(
-        "valeursVariable04"
-      ).innerHTML = variableOrientation10;
-
-      if (
-        variableOrientation07 == 0 &&
-        variableOrientation08 == 0 &&
-        variableOrientation09 > 8
-      ) {
-        document.getElementById("face").innerHTML = "A";
-      }
-
-      if (
-        variableOrientation07 == 0 &&
-        variableOrientation08 < -8 &&
-        variableOrientation09 == 0
-      ) {
-        document.getElementById("face").innerHTML = "B";
-      }
-
-      if (
-        variableOrientation07 > 8 &&
-        variableOrientation08 <= 1 &&
-        variableOrientation09 <= 1
-      ) {
-        document.getElementById("face").innerHTML = "F";
-      }
-
-      if (
-        variableOrientation07 <= 1 &&
-        variableOrientation08 <= 1 &&
-        variableOrientation09 < -8
-      ) {
-        document.getElementById("face").innerHTML = "C";
-      }
-
-      if (
-        variableOrientation07 <= 1 &&
-        variableOrientation08 > 8 &&
-        variableOrientation09 <= 1
-      ) {
-        document.getElementById("face").innerHTML = "D";
-      }
-      if (
-        variableOrientation07 < -8 &&
-        variableOrientation08 <= 1 &&
-        variableOrientation09 <= 1
-      ) {
-        document.getElementById("face").innerHTML = "E";
-      }
-    }, 50); // toutes les 50 millisecondes, on rafraichit les valeurs des variables
-  </script>
 </html>
