@@ -85,27 +85,6 @@ class Shake {
     }
     // return;
   } // end function start()
-  // stop() {
-  //   if (this.hasDeviceMotion) {
-  //     window.removeEventListener(
-  //       "devicemotion",
-  //       function(event) {
-  //         processMotion(
-  //           event,
-  //           thresholdFunct,
-  //           timeoutFunct,
-  //           this.lastX,
-  //           this.lastY,
-  //           this.lastZ,
-  //           lasttimeFunct
-  //         );
-  //       },
-  //       true
-  //     );
-  //     //  }
-  //     reset();
-  //   }
-  // }
 } // end class shake()
 
 function reset() {

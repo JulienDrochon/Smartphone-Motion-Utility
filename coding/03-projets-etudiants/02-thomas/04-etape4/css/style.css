@@ -25,3 +25,18 @@ svg {
   position: absolute;
   z-index: 300;
 }
+.death {
+  animation-name: deathAnimation;
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+}
+
+@keyframes deathAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}

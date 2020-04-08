@@ -43,7 +43,7 @@ function onClickIos() {
             // Accelerometer gravity
             document.querySelector("#motion-x").innerHTML = x1;
             document.querySelector("#motion-y").innerHTML = y1;
-            document.querySelector("#motion-z").innerHTML = y2;
+            document.querySelector("#motion-z").innerHTML = z1;
             // Acceleration
             document.querySelector("#acc-x").innerHTML = e.acceleration.x;
             document.querySelector("#acc-y").innerHTML = e.acceleration.y;
