@@ -1,0 +1,651 @@
+.scene {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background-color);
+  overflow: hidden;
+}
+.scene .ellipses {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: calc(var(--base-radius) * 2);
+  height: calc(var(--base-radius) * 2);
+  border-radius: 100%;
+}
+.scene .ellipse {
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: auto;
+  width: calc(var(--base-radius) * 2);
+  height: calc(var(--base-radius) * 2);
+  will-change: width, height;
+}
+.scene .ellipse:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px var(--line-style) var(--line-color);
+  border-radius: 100%;
+  -webkit-animation: circleAnim var(--animation-duration) linear infinite both;
+          animation: circleAnim var(--animation-duration) linear infinite both;
+}
+.scene .ellipse:nth-child(1) {
+  opacity: calc(var(--ellipses-count) - 0);
+  -webkit-transform: rotate(calc(1 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(1 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(1 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(1 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(1):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -1 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -1 );
+}
+.scene .ellipse:nth-child(2) {
+  opacity: calc(var(--ellipses-count) - 1);
+  -webkit-transform: rotate(calc(2 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(2 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(2 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(2 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(2):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -2 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -2 );
+}
+.scene .ellipse:nth-child(3) {
+  opacity: calc(var(--ellipses-count) - 2);
+  -webkit-transform: rotate(calc(3 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(3 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(3 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(3 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(3):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -3 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -3 );
+}
+.scene .ellipse:nth-child(4) {
+  opacity: calc(var(--ellipses-count) - 3);
+  -webkit-transform: rotate(calc(4 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(4 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(4 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(4 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(4):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -4 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -4 );
+}
+.scene .ellipse:nth-child(5) {
+  opacity: calc(var(--ellipses-count) - 4);
+  -webkit-transform: rotate(calc(5 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(5 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(5 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(5 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(5):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -5 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -5 );
+}
+.scene .ellipse:nth-child(6) {
+  opacity: calc(var(--ellipses-count) - 5);
+  -webkit-transform: rotate(calc(6 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(6 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(6 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(6 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(6):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -6 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -6 );
+}
+.scene .ellipse:nth-child(7) {
+  opacity: calc(var(--ellipses-count) - 6);
+  -webkit-transform: rotate(calc(7 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(7 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(7 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(7 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(7):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -7 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -7 );
+}
+.scene .ellipse:nth-child(8) {
+  opacity: calc(var(--ellipses-count) - 7);
+  -webkit-transform: rotate(calc(8 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(8 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(8 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(8 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(8):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -8 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -8 );
+}
+.scene .ellipse:nth-child(9) {
+  opacity: calc(var(--ellipses-count) - 8);
+  -webkit-transform: rotate(calc(9 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(9 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(9 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(9 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(9):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -9 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -9 );
+}
+.scene .ellipse:nth-child(10) {
+  opacity: calc(var(--ellipses-count) - 9);
+  -webkit-transform: rotate(calc(10 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(10 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(10 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(10 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(10):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -10 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -10 );
+}
+.scene .ellipse:nth-child(11) {
+  opacity: calc(var(--ellipses-count) - 10);
+  -webkit-transform: rotate(calc(11 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(11 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(11 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(11 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(11):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -11 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -11 );
+}
+.scene .ellipse:nth-child(12) {
+  opacity: calc(var(--ellipses-count) - 11);
+  -webkit-transform: rotate(calc(12 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(12 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(12 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(12 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(12):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -12 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -12 );
+}
+.scene .ellipse:nth-child(13) {
+  opacity: calc(var(--ellipses-count) - 12);
+  -webkit-transform: rotate(calc(13 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(13 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(13 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(13 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(13):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -13 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -13 );
+}
+.scene .ellipse:nth-child(14) {
+  opacity: calc(var(--ellipses-count) - 13);
+  -webkit-transform: rotate(calc(14 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(14 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(14 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(14 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(14):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -14 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -14 );
+}
+.scene .ellipse:nth-child(15) {
+  opacity: calc(var(--ellipses-count) - 14);
+  -webkit-transform: rotate(calc(15 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(15 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(15 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(15 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(15):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -15 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -15 );
+}
+.scene .ellipse:nth-child(16) {
+  opacity: calc(var(--ellipses-count) - 15);
+  -webkit-transform: rotate(calc(16 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(16 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(16 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(16 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(16):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -16 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -16 );
+}
+.scene .ellipse:nth-child(17) {
+  opacity: calc(var(--ellipses-count) - 16);
+  -webkit-transform: rotate(calc(17 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(17 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(17 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(17 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(17):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -17 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -17 );
+}
+.scene .ellipse:nth-child(18) {
+  opacity: calc(var(--ellipses-count) - 17);
+  -webkit-transform: rotate(calc(18 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(18 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(18 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(18 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(18):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -18 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -18 );
+}
+.scene .ellipse:nth-child(19) {
+  opacity: calc(var(--ellipses-count) - 18);
+  -webkit-transform: rotate(calc(19 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(19 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(19 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(19 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(19):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -19 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -19 );
+}
+.scene .ellipse:nth-child(20) {
+  opacity: calc(var(--ellipses-count) - 19);
+  -webkit-transform: rotate(calc(20 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(20 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(20 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(20 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(20):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -20 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -20 );
+}
+.scene .ellipse:nth-child(21) {
+  opacity: calc(var(--ellipses-count) - 20);
+  -webkit-transform: rotate(calc(21 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(21 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(21 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(21 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(21):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -21 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -21 );
+}
+.scene .ellipse:nth-child(22) {
+  opacity: calc(var(--ellipses-count) - 21);
+  -webkit-transform: rotate(calc(22 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(22 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(22 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(22 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(22):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -22 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -22 );
+}
+.scene .ellipse:nth-child(23) {
+  opacity: calc(var(--ellipses-count) - 22);
+  -webkit-transform: rotate(calc(23 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(23 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(23 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(23 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(23):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -23 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -23 );
+}
+.scene .ellipse:nth-child(24) {
+  opacity: calc(var(--ellipses-count) - 23);
+  -webkit-transform: rotate(calc(24 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(24 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(24 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(24 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(24):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -24 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -24 );
+}
+.scene .ellipse:nth-child(25) {
+  opacity: calc(var(--ellipses-count) - 24);
+  -webkit-transform: rotate(calc(25 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(25 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(25 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(25 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(25):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -25 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -25 );
+}
+.scene .ellipse:nth-child(26) {
+  opacity: calc(var(--ellipses-count) - 25);
+  -webkit-transform: rotate(calc(26 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(26 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(26 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(26 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(26):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -26 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -26 );
+}
+.scene .ellipse:nth-child(27) {
+  opacity: calc(var(--ellipses-count) - 26);
+  -webkit-transform: rotate(calc(27 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(27 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(27 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(27 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(27):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -27 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -27 );
+}
+.scene .ellipse:nth-child(28) {
+  opacity: calc(var(--ellipses-count) - 27);
+  -webkit-transform: rotate(calc(28 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(28 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(28 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(28 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(28):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -28 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -28 );
+}
+.scene .ellipse:nth-child(29) {
+  opacity: calc(var(--ellipses-count) - 28);
+  -webkit-transform: rotate(calc(29 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(29 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(29 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(29 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(29):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -29 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -29 );
+}
+.scene .ellipse:nth-child(30) {
+  opacity: calc(var(--ellipses-count) - 29);
+  -webkit-transform: rotate(calc(30 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(30 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(30 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(30 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(30):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -30 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -30 );
+}
+.scene .ellipse:nth-child(31) {
+  opacity: calc(var(--ellipses-count) - 30);
+  -webkit-transform: rotate(calc(31 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(31 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(31 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(31 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(31):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -31 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -31 );
+}
+.scene .ellipse:nth-child(32) {
+  opacity: calc(var(--ellipses-count) - 31);
+  -webkit-transform: rotate(calc(32 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(32 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(32 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(32 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(32):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -32 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -32 );
+}
+.scene .ellipse:nth-child(33) {
+  opacity: calc(var(--ellipses-count) - 32);
+  -webkit-transform: rotate(calc(33 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(33 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(33 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(33 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(33):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -33 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -33 );
+}
+.scene .ellipse:nth-child(34) {
+  opacity: calc(var(--ellipses-count) - 33);
+  -webkit-transform: rotate(calc(34 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(34 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(34 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(34 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(34):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -34 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -34 );
+}
+.scene .ellipse:nth-child(35) {
+  opacity: calc(var(--ellipses-count) - 34);
+  -webkit-transform: rotate(calc(35 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(35 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(35 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(35 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(35):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -35 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -35 );
+}
+.scene .ellipse:nth-child(36) {
+  opacity: calc(var(--ellipses-count) - 35);
+  -webkit-transform: rotate(calc(36 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(36 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(36 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(36 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(36):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -36 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -36 );
+}
+.scene .ellipse:nth-child(37) {
+  opacity: calc(var(--ellipses-count) - 36);
+  -webkit-transform: rotate(calc(37 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(37 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(37 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(37 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(37):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -37 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -37 );
+}
+.scene .ellipse:nth-child(38) {
+  opacity: calc(var(--ellipses-count) - 37);
+  -webkit-transform: rotate(calc(38 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(38 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(38 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(38 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(38):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -38 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -38 );
+}
+.scene .ellipse:nth-child(39) {
+  opacity: calc(var(--ellipses-count) - 38);
+  -webkit-transform: rotate(calc(39 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(39 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(39 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(39 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(39):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -39 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -39 );
+}
+.scene .ellipse:nth-child(40) {
+  opacity: calc(var(--ellipses-count) - 39);
+  -webkit-transform: rotate(calc(40 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(40 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(40 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(40 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(40):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -40 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -40 );
+}
+.scene .ellipse:nth-child(41) {
+  opacity: calc(var(--ellipses-count) - 40);
+  -webkit-transform: rotate(calc(41 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(41 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(41 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(41 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(41):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -41 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -41 );
+}
+.scene .ellipse:nth-child(42) {
+  opacity: calc(var(--ellipses-count) - 41);
+  -webkit-transform: rotate(calc(42 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(42 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(42 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(42 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(42):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -42 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -42 );
+}
+.scene .ellipse:nth-child(43) {
+  opacity: calc(var(--ellipses-count) - 42);
+  -webkit-transform: rotate(calc(43 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(43 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(43 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(43 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(43):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -43 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -43 );
+}
+.scene .ellipse:nth-child(44) {
+  opacity: calc(var(--ellipses-count) - 43);
+  -webkit-transform: rotate(calc(44 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(44 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(44 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(44 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(44):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -44 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -44 );
+}
+.scene .ellipse:nth-child(45) {
+  opacity: calc(var(--ellipses-count) - 44);
+  -webkit-transform: rotate(calc(45 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(45 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(45 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(45 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(45):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -45 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -45 );
+}
+.scene .ellipse:nth-child(46) {
+  opacity: calc(var(--ellipses-count) - 45);
+  -webkit-transform: rotate(calc(46 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(46 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(46 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(46 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(46):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -46 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -46 );
+}
+.scene .ellipse:nth-child(47) {
+  opacity: calc(var(--ellipses-count) - 46);
+  -webkit-transform: rotate(calc(47 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(47 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(47 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(47 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(47):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -47 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -47 );
+}
+.scene .ellipse:nth-child(48) {
+  opacity: calc(var(--ellipses-count) - 47);
+  -webkit-transform: rotate(calc(48 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(48 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(48 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(48 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(48):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -48 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -48 );
+}
+.scene .ellipse:nth-child(49) {
+  opacity: calc(var(--ellipses-count) - 48);
+  -webkit-transform: rotate(calc(49 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(49 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(49 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(49 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(49):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -49 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -49 );
+}
+.scene .ellipse:nth-child(50) {
+  opacity: calc(var(--ellipses-count) - 49);
+  -webkit-transform: rotate(calc(50 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(50 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(50 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(50 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(50):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -50 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -50 );
+}
+.scene .ellipse:nth-child(51) {
+  opacity: calc(var(--ellipses-count) - 50);
+  -webkit-transform: rotate(calc(51 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(51 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(51 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(51 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(51):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -51 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -51 );
+}
+.scene .ellipse:nth-child(52) {
+  opacity: calc(var(--ellipses-count) - 51);
+  -webkit-transform: rotate(calc(52 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(52 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(52 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(52 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(52):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -52 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -52 );
+}
+.scene .ellipse:nth-child(53) {
+  opacity: calc(var(--ellipses-count) - 52);
+  -webkit-transform: rotate(calc(53 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(53 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(53 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(53 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(53):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -53 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -53 );
+}
+.scene .ellipse:nth-child(54) {
+  opacity: calc(var(--ellipses-count) - 53);
+  -webkit-transform: rotate(calc(54 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(54 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(54 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(54 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(54):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -54 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -54 );
+}
+.scene .ellipse:nth-child(55) {
+  opacity: calc(var(--ellipses-count) - 54);
+  -webkit-transform: rotate(calc(55 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(55 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(55 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(55 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(55):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -55 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -55 );
+}
+.scene .ellipse:nth-child(56) {
+  opacity: calc(var(--ellipses-count) - 55);
+  -webkit-transform: rotate(calc(56 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(56 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(56 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(56 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(56):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -56 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -56 );
+}
+.scene .ellipse:nth-child(57) {
+  opacity: calc(var(--ellipses-count) - 56);
+  -webkit-transform: rotate(calc(57 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(57 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(57 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(57 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(57):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -57 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -57 );
+}
+.scene .ellipse:nth-child(58) {
+  opacity: calc(var(--ellipses-count) - 57);
+  -webkit-transform: rotate(calc(58 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(58 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(58 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(58 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(58):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -58 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -58 );
+}
+.scene .ellipse:nth-child(59) {
+  opacity: calc(var(--ellipses-count) - 58);
+  -webkit-transform: rotate(calc(59 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(59 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(59 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(59 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(59):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -59 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -59 );
+}
+.scene .ellipse:nth-child(60) {
+  opacity: calc(var(--ellipses-count) - 59);
+  -webkit-transform: rotate(calc(60 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(60 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(60 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(60 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(60):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -60 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -60 );
+}
+.scene .ellipse:nth-child(61) {
+  opacity: calc(var(--ellipses-count) - 60);
+  -webkit-transform: rotate(calc(61 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(61 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(61 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(61 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(61):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -61 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -61 );
+}
+.scene .ellipse:nth-child(62) {
+  opacity: calc(var(--ellipses-count) - 61);
+  -webkit-transform: rotate(calc(62 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(62 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(62 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(62 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(62):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -62 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -62 );
+}
+.scene .ellipse:nth-child(63) {
+  opacity: calc(var(--ellipses-count) - 62);
+  -webkit-transform: rotate(calc(63 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(63 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(63 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(63 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(63):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -63 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -63 );
+}
+.scene .ellipse:nth-child(64) {
+  opacity: calc(var(--ellipses-count) - 63);
+  -webkit-transform: rotate(calc(64 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(64 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+          transform: rotate(calc(64 / var(--ellipses-count) * 360deg)) translateY(calc(var(--base-radius) * -1)) rotate(calc(64 / var(--ellipses-count) * -360deg)) translate(-50%, -50%);
+}
+.scene .ellipse:nth-child(64):before {
+  -webkit-animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -64 );
+          animation-delay: calc( calc( var(--animation-duration) / calc(var(--cycles-per-loop) * var(--ellipses-count)) ) * -64 );
+}
+
+@-webkit-keyframes circleAnim {
+  0% {
+    -webkit-transform: rotate(0deg) scale(var(--axis-scale-start), 1);
+            transform: rotate(0deg) scale(var(--axis-scale-start), 1);
+  }
+  50% {
+    -webkit-transform: rotate(180deg) scale(var(--axis-scale-end), 1);
+            transform: rotate(180deg) scale(var(--axis-scale-end), 1);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(var(--axis-scale-start), 1);
+            transform: rotate(360deg) scale(var(--axis-scale-start), 1);
+  }
+}
+
+@keyframes circleAnim {
+  0% {
+    -webkit-transform: rotate(0deg) scale(var(--axis-scale-start), 1);
+            transform: rotate(0deg) scale(var(--axis-scale-start), 1);
+  }
+  50% {
+    -webkit-transform: rotate(180deg) scale(var(--axis-scale-end), 1);
+            transform: rotate(180deg) scale(var(--axis-scale-end), 1);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(var(--axis-scale-start), 1);
+            transform: rotate(360deg) scale(var(--axis-scale-start), 1);
+  }
+}
+.scene.update .ellipse:before {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
