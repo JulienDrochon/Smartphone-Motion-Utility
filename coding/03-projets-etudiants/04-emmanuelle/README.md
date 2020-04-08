@@ -22,32 +22,32 @@ En considérant que le cube, l'emplacement du téléphone et les faces du cube c
 
 Voici les données qui correspondent (pour mon téléphone, elles peuvent varier selon téléphone utilisé) à la face qui est située au sommet du cube :
 
-- A
-  `variableOrientation07` est égale à 0
-  `variableOrientation08` est égale à 0
-  `variableOrientation09` est égale à 10
-
-- B
-  `variableOrientation07` est égale à 0
-  `variableOrientation08` est égale à -9
-  `variableOrientation09` est égale à 0
-
-- C
-  `variableOrientation07` est égale à 0
-  `variableOrientation08` est égale à 0
-  `variableOrientation09` est égale à -9
-
-- D
-  `variableOrientation07` est égale à 0
-  `variableOrientation08` est égale à 9
-  `variableOrientation09` est égale à 0
-
-- E
-  `variableOrientation07` est égale à -9
-  `variableOrientation08` est égale à 0
-  `variableOrientation09` est égale à 0
-
-- A
-  `variableOrientation07` est égale à 9
-  `variableOrientation08` est égale à 0
-  `variableOrientation09` est égale à 0
+- A  
+  `variableOrientation07` est égale à 0  
+  `variableOrientation08` est égale à 0  
+  `variableOrientation09` est égale à 10  
+  
+- B  
+  `variableOrientation07` est égale à 0  
+  `variableOrientation08` est égale à -9  
+  `variableOrientation09` est égale à 0  
+  
+- C  
+  `variableOrientation07` est égale à 0  
+  `variableOrientation08` est égale à 0  
+  `variableOrientation09` est égale à -9  
+  
+- D  
+  `variableOrientation07` est égale à 0  
+  `variableOrientation08` est égale à 9  
+  `variableOrientation09` est égale à 0  
+  
+- E  
+  `variableOrientation07` est égale à -9  
+  `variableOrientation08` est égale à 0  
+  `variableOrientation09` est égale à 0  
+  
+- A  
+  `variableOrientation07` est égale à 9  
+  `variableOrientation08` est égale à 0  
+  `variableOrientation09` est égale à 0  
