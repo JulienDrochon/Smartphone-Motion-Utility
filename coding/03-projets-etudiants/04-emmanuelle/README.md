@@ -47,7 +47,7 @@ Voici les données qui correspondent (pour mon téléphone, elles peuvent varier
   `variableOrientation08` est égale à 0  
   `variableOrientation09` est égale à 0  
   
-- A  
+- F  
   `variableOrientation07` est égale à 9  
   `variableOrientation08` est égale à 0  
   `variableOrientation09` est égale à 0  
