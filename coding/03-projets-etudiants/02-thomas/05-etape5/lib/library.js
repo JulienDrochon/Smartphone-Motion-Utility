@@ -13,16 +13,17 @@ var variableOrientation10 = "";
 
 socket.on("sendDataToDashboard", insertText);
 function insertText(data) {
-  variableOrientation01 = data.data.value[0];
-  variableOrientation02 = data.data.value[1];
-  variableOrientation03 = data.data.value[2];
-  variableOrientation04 = data.data.value[3];
-  variableOrientation05 = data.data.value[4];
-  variableOrientation06 = data.data.value[5];
-  variableOrientation07 = data.data.value[6];
-  variableOrientation08 = data.data.value[7];
-  variableOrientation09 = data.data.value[8];
-  variableOrientation10 = data.data.value[9]; //shake
+  console.log(data.data.value[0]);
+  // variableOrientation01 = data.orientation.value[0];
+  // variableOrientation02 = data.orientation.value[1];
+  // variableOrientation03 = data.orientation.value[2];
+  // variableOrientation04 = data.orientation.value[3];
+  // variableOrientation05 = data.orientation.value[4];
+  // variableOrientation06 = data.orientation.value[5];
+  // variableOrientation07 = data.orientation.value[6];
+  // variableOrientation08 = data.orientation.value[7];
+  // variableOrientation09 = data.orientation.value[8];
+  // variableOrientation10 = data.orientation.value[9]; //shake
 }
 
 // -------------------------- Functions Library -------------------------- //

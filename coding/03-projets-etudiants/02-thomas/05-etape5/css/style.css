@@ -1,0 +1,42 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.maskFullscreen {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 300;
+}
+#ImageFondEcran {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+  /* l'image de fond d'écran est en arrière plan */
+  background: url("http://cdn.images.express.co.uk/img/dynamic/151/590x/secondary/Planet-Nine-443937.jpg");
+  background-size: cover;
+  background-position: center;
+}
+svg {
+  position: absolute;
+  z-index: 300;
+}
+.death {
+  animation-name: deathAnimation;
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+}
+
+@keyframes deathAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
