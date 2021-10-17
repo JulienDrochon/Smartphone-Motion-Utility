@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Image scrolling</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="../../00-libraries/socket.io.slim.js"></script>
+</head>
+
+<body>
+  <img src="assets/ruper-mulot01.jpg" alt="" />
+  <script src="../../00-libraries/library.js"></script>
+  <script>
+    setInterval(function () {
+      // --- dans la console --- //
+      // afficher dans la console du navigateur les valeurs de la variable
+      console.log("variable 2 : " + variableOrientation02);
+      if (variableOrientation02 > 0) {
+        window.scrollBy(0, -5);
+      }
+      if (variableOrientation02 < 0) {
+        window.scrollBy(0, 5);
+      }
+    }, 20); // toutes les 50 millisecondes, on rafraichit les valeurs des variables
+  </script>
+</body>
+
+</html>

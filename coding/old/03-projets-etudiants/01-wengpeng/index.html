@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="/lib/p5.min.js"></script>
+    <script src="/lib/socket.io.slim.js"></script>
+    <script src="/lib/library.js"></script>
+  </head>
+  <body>
+    <script>
+      let color01;
+      function setup() {
+        createCanvas(windowWidth, windowHeight);
+        colorMode(HSB, 100);
+      }
+      function draw() {
+        color01 = color(
+          map_range(variableOrientation01, 0, 359, 0, 100),
+          100,
+          100
+        );
+        background(100);
+        console.log('variable 1 : ' + variableOrientation01);
+        fill(color01);
+        ellipse(100, 200, variableOrientation02 * 5, variableOrientation02 * 5);
+      }
+    </script>
+  </body>
+</html>

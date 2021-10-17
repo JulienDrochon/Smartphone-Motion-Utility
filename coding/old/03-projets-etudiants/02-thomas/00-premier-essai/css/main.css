@@ -1,0 +1,49 @@
+/*
+  main.css
+  --> ce fichier contiendra la mise en page de votre affiche
+*/
+
+
+#affiche {
+  /* vous pouvez éditer le bloc #affiche mais uniquement pour lui ajouter du padding ou changer sa mise en forme (changer sa couleur de fond, sa famille de caractères, etc.) de manière à ne pas casser la gestion du bloc dans la page */
+
+
+}
+
+
+/* l’élément créé par p5.js et dans lequel on dessine */
+canvas {
+  position: absolute;
+  z-index: 6;
+  top:0;
+  left:0;
+
+  mix-blend-mode: overlay;
+}
+
+
+.plan {
+  width: 100%;
+
+}
+
+.couche {
+  width: 100%;
+z-index: 2;
+position: absolute; 
+}
+
+
+.logo {
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+
+}
+
+.mep {
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+
+}

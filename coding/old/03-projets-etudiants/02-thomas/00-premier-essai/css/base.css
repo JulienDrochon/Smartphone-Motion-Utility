@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box; /* 1 */
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: #DEDEDE;
+  color: black;
+  
+  font-family: 'Space Mono', monospace;
+}
+
+#affiche {
+  overflow: hidden;
+  position: relative;
+  width: 64vh;
+  height: 90vh;    
+  /* le ratio est celui d’une feuille A4 (format ISO) environ */
+  background: #fff;
+  box-shadow: 0 4px 8px 0px rgba(0,0,0,.22);
+}
+
+h1,h2,h3,h4 {
+  font-family: inherit;
+  font-weight: normal;
+}
+
+@media screen and (max-width: 768px) {
+  #affiche {
+  }
+}

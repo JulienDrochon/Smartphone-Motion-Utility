@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Titre de l’affiche</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <style media="screen">
+    .noir {
+      background: black;
+      mix-blend-mode: overlay;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 5;
+    }
+
+    .rond {
+      position: absolute;
+      background: white;
+      height: 100px;
+      width: 100px;
+      border-radius: 50px;
+      mix-blend-mode: overlay;
+      z-index: 4;
+
+    }
+
+    #rond {
+      position: absolute;
+      z-index: 1;
+    }
+
+    .couche {
+      z-index: 4;
+      position: absolute;
+      left: 0;
+      top: 0;
+      clip-path: url(#rond);
+    }
+  </style>
+  <!-- Ajout bibliothèque pour connexion avec le téléphone -->
+  <script src="lib/socket.io.slim.js"></script>
+</head>
+
+<body>
+
+  <svg width="0" height="0" id="svg">
+    <defs>
+      <clipPath id="rond">
+        <circle id="rondcircle" cx="-100" cy="-100" r="50" />
+      </clipPath>
+    </defs>
+  </svg>
+
+  <div id="affiche">
+    <!-- ici le contenu de votre affiche -->
+
+    <!-- image visible initialement  -->
+    <img class="plan" src="img/1erplan.png">
+    <!--  plan masqué par le clip svg -->
+    <img class="couche" id src="img/2plan.png">
+    <!--  calque noir superposé en mix-blend-mode: overlay;  -->
+    <div class="noir"></div>
+    <!--  rond blanc superposé en mix-blend-mode: overlay;  -->
+    <div class="rond" id="rondblanc"></div>
+
+    <!-- fin du contenu de votre affiche -->
+  </div>
+  <script src="lib/jquery-3.2.1.min.js"></script>
+  <!-- Ajout bibliothèque pour connexion avec le téléphone -->
+  <script src="lib/library.js"></script>
+  <!-- Script  mixant le traitement de l'action du téléphone et du script original -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>

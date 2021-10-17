@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Bibliothèque nécessaire pour récupérer les valeurs des données du téléphone -->
+    <script src="js/socket.io.slim.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- div pour afficher la valeur de la variable variableOrientation10, c'est à dire l'évenement Shake -->
+    <div>Shake : <span id="valeursVariable10">--</span></div>
+    <!-- div pour afficher la valeur de la face du cube située au sommet -->
+    <div id="face"></div>
+
+    <!-- Bibliothèque nécessaire pour récupérer les valeurs des données du téléphone -->
+
+    <script src="js/library.js"></script>
+    <script>
+      let faceActuelle, facePrecedente;
+      let caseGrille = 8;
+      // var phoneAngleActuel, phoneAnglePrecedent, phoneAngledifference;
+      let triggerFreeze = false;
+      let phoneAngleActuel = [0, 0, 0];
+      let phoneAnglePrecedent = [0, 0, 0];
+      let phoneAngledifference = [0, 0, 0];
+      let storeOrientation = [0, 0, 0];
+      let oldOrientation = [0, 0, 0];
+
+      setInterval(function () {
+        document.getElementById(
+          "valeursVariable10"
+        ).innerHTML = variableOrientation10;
+
+        phoneAngleActuel = [
+          variableOrientation01,
+          variableOrientation02,
+          variableOrientation03,
+        ];
+
+        if (
+          variableOrientation07 == 0 &&
+          variableOrientation08 == 0 &&
+          variableOrientation09 > 8 &&
+          triggerFreeze == false
+        ) {
+          triggerFreeze = true;
+          oldOrientation = storeOrientation;
+          storeOrientation = [
+            variableOrientation01,
+            variableOrientation02,
+            variableOrientation03,
+          ];
+          document.getElementById("face").innerHTML = "A";
+          // console.log("A");
+        } else if (
+          variableOrientation07 == 0 &&
+          variableOrientation08 <= -9 &&
+          variableOrientation09 == 0 &&
+          triggerFreeze == false
+        ) {
+          triggerFreeze = true;
+          oldOrientation = storeOrientation;
+          storeOrientation = [
+            variableOrientation01,
+            variableOrientation02,
+            variableOrientation03,
+          ];
+
+          // phoneAnglePrecedent = phoneAngleActuel;
+          document.getElementById("face").innerHTML = "B";
+          // console.log("B");
+        } else if (
+          variableOrientation07 >= 9 &&
+          variableOrientation08 == 0 &&
+          variableOrientation09 == 0 &&
+          triggerFreeze == false
+        ) {
+          triggerFreeze = true;
+          oldOrientation = storeOrientation;
+          storeOrientation = [
+            variableOrientation01,
+            variableOrientation02,
+            variableOrientation03,
+          ];
+
+          document.getElementById("face").innerHTML = "F";
+          // console.log("F");
+        } else if (
+          variableOrientation07 == 0 &&
+          variableOrientation08 == 0 &&
+          variableOrientation09 <= -9 &&
+          triggerFreeze == false
+        ) {
+          triggerFreeze = true;
+          oldOrientation = storeOrientation;
+          storeOrientation = [
+            variableOrientation01,
+            variableOrientation02,
+            variableOrientation03,
+          ];
+
+          document.getElementById("face").innerHTML = "C";
+          // console.log("C");
+        } else if (
+          variableOrientation07 == 0 &&
+          variableOrientation08 >= 9 &&
+          variableOrientation09 == 0 &&
+          triggerFreeze == false
+        ) {
+          triggerFreeze = true;
+          oldOrientation = storeOrientation;
+          storeOrientation = [
+            variableOrientation01,
+            variableOrientation02,
+            variableOrientation03,
+          ];
+
+          document.getElementById("face").innerHTML = "D";
+          // console.log("D");
+        } else if (
+          variableOrientation07 <= -9 &&
+          variableOrientation08 == 0 &&
+          variableOrientation09 == 0 &&
+          triggerFreeze == false
+        ) {
+          triggerFreeze = true;
+          oldOrientation = storeOrientation;
+          storeOrientation = [
+            variableOrientation01,
+            variableOrientation02,
+            variableOrientation03,
+          ];
+
+          document.getElementById("face").innerHTML = "E";
+          // console.log("E");
+        } else if (
+          compareList(phoneAngleActuel, phoneAnglePrecedent)[0] != 0 &&
+          compareList(phoneAngleActuel, phoneAnglePrecedent)[1] != 0 &&
+          compareList(phoneAngleActuel, phoneAnglePrecedent)[2] != 0
+        ) {
+          console.log("eeeee");
+          triggerFreeze = false;
+        }
+        // }
+        console.log(
+          "freeze : " +
+            triggerFreeze +
+            "\n" +
+            "compare : " +
+            compareList(oldOrientation, storeOrientation) +
+            "\n" +
+            "07 : " +
+            variableOrientation07 +
+            " 08 : " +
+            variableOrientation08 +
+            " 09 : " +
+            variableOrientation09
+        );
+
+        phoneAnglePrecedent = phoneAngleActuel;
+        // console.log(triggerFreeze);
+      }, 100); // toutes les 50 millisecondes, on rafraichit les valeurs des variables
+
+      function compareList(list01, list02) {
+        // let list01 = [];
+        // let list02 = [];
+        let listDiff = [];
+        for (var i = 0; i < 3; i++) {
+          listDiff[i] = list01[i] - list02[i];
+        }
+        return listDiff;
+      }
+    </script>
+  </body>
+</html>

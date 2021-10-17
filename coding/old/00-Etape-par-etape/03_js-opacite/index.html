@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <script src="js/socket.io.slim.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1 id="montitre">Ceci est un titre</h1>
+    <div id="valeursVariable01"></div>
+  </body>
+  <!-- <script src="js/script.js"></script> -->
+  <script src="js/library.js"></script>
+  <script>
+    //je déclare ma variable et lui assigne l'élément avec l'id 'montitre'
+    var variableDivMontitre = document.getElementById('montitre');
+    //je change avec javavascript la propriété opacity du style CSS de la variable variableDivMontitre
+    variableDivMontitre.style.opacity = 0.1; // la valeur varie entre 0 et 1
+
+    setInterval(function() {
+      // --- dans la console --- //
+      // afficher dans la console du navigateur les valeurs des variables
+      console.log('variable 1 : ' + variableOrientation01);
+    }, 50); // toutes les 50 millisecondes, on rafraichit les valeurs des variables
+  </script>
+</html>
