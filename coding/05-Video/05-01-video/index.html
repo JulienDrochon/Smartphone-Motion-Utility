@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Image scrolling</title>
     <link rel="stylesheet" href="css/style.css" />
-    <script src="../00-libraries/socket.io.slim.js"></script>
+    <script src="../../00-libraries/socket.io.slim.js"></script>
   </head>
   <body>
     <video
@@ -15,7 +15,7 @@
       preload="auto"
       controls
     ></video>
-    <script src="../00-libraries/library.js"></script>
+    <script src="../../00-libraries/library.js"></script>
     <script>
       var videoDiv = document.getElementById('maVideo');
 
@@ -30,10 +30,11 @@
           }
         } else if (variableOrientation02 == 0) {
           videoDiv.pause();
+          
         } else if (variableOrientation02 < 0) {
           videoDiv.pause();
-          videoDiv.currentTime = videoDiv.currentTime - 0.5;
-          // videoDiv.playBackwards(); // je joue ma vidéo à l'envers
+         // videoDiv.currentTime = videoDiv.currentTime - 0.5;
+          videoDiv.playBackwards(); // je joue ma vidéo à l'envers
         }
       }, 20); // toutes les 50 millisecondes, on rafraichit les valeurs des variables
 
