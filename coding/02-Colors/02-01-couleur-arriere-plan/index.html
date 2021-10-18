@@ -5,26 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <script src="../00-libraries/socket.io.slim.js"></script>
+    <script src="../../00-libraries/socket.io.slim.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
   </head>
 
-  <body>
-    <h1 id="montitre">Ceci est un titre</h1>
-  </body>
+  <body id="idDeMonBody"></body>
 
-  <script src="../00-libraries/library.js"></script>
+  <script src="../../00-libraries/library.js"></script>
   <script>
-    //je déclare ma variable et lui assigne l'élément avec l'id 'montitre'
-    var variableDivMontitre = document.getElementById('montitre');
+    //je déclare ma variable et lui assigne l'élément avec l'id 'idDeMonBody'
+    var variableDivBody = document.getElementById('idDeMonBody');
 
     setInterval(function() {
       // --- dans la console --- //
       // afficher dans la console du navigateur les valeurs des variables
       console.log('variable 1 : ' + variableOrientation01);
-
-      variableDivMontitre.style.color =
+      // je change avec les variables de mon téléphone les différentes composantes de la couleur de fond de la page
+      variableDivBody.style.background =
         'rgb(' +
         map_range(variableOrientation01, 0, 359, 0, 255) +
         ',' +

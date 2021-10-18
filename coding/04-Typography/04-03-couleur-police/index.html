@@ -5,27 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <script src="../00-libraries/socket.io.slim.js"></script>
+    <script src="../../00-libraries/socket.io.slim.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
   </head>
 
   <body>
     <h1 id="montitre">Ceci est un titre</h1>
-    <div id="valeursVariable01"></div>
   </body>
-  <!-- <script src="js/script.js"></script> -->
-  <script src="../00-libraries/library.js"></script>
+
+  <script src="../../00-libraries/library.js"></script>
   <script>
     //je déclare ma variable et lui assigne l'élément avec l'id 'montitre'
     var variableDivMontitre = document.getElementById('montitre');
-    //je change avec javavascript la propriété opacity du style CSS de la variable variableDivMontitre
-    variableDivMontitre.style.opacity = 0.1; // la valeur varie entre 0 et 1
 
     setInterval(function() {
       // --- dans la console --- //
       // afficher dans la console du navigateur les valeurs des variables
       console.log('variable 1 : ' + variableOrientation01);
+
+      variableDivMontitre.style.color =
+        'rgb(' +
+        map_range(variableOrientation01, 0, 359, 0, 255) +
+        ',' +
+        map_range(variableOrientation02, -30, 30, 0, 255) +
+        ',' +
+        map_range(variableOrientation03, -30, 30, 0, 255) +
+        ')';
     }, 50); // toutes les 50 millisecondes, on rafraichit les valeurs des variables
   </script>
 </html>
